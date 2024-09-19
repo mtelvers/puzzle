@@ -1,0 +1,4 @@
+(executable
+ (public_name puzzle)
+ (name main)
+ (libraries tyxml domainslib))
