@@ -91,7 +91,7 @@ let _ =
           let prom =
             T.async pool (fun _ ->
                 let solutions = try_shapes p shapes [] in
-                Html.emit_page ("html/" ^ Html.to_filename date) (Html.home_page_doc solutions date))
+                Html.emit_page ("docs/" ^ Html.to_filename date) (Html.home_page_doc solutions date))
           in
           prom :: promises)
         [] Date.year

@@ -1,12 +1,154 @@
-.center {
-  margin: auto;
-  max-width: 500px;
-  text-align: center;
-  padding: 10px;
+:root {
+  --primary-color: #3a7bd5;
+  --primary-dark: #2c5282;
+  --secondary-color: #00d2ff;
+  --background-color: #f8fafc;
+  --text-color: #2d3748;
+  --accent-color: #4c51bf;
+  --border-color: #e2e8f0;
 }
 
-td {
-  border: 1px solid black;
-  width: 10%;
-  height: 22px;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.6;
+  padding: 20px;
+}
+
+.center {
+  margin: 0 auto;
+  max-width: 800px;
+  text-align: center;
+  padding: 30px;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+h1 {
+  color: var(--primary-dark);
+  margin-bottom: 30px;
+  font-weight: 600;
+  font-size: 2rem;
+}
+
+h2 {
+  color: var(--primary-dark);
+  margin: 25px 0 15px;
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+
+.puzzle-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.puzzle-piece {
+  filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.1));
+  transition: all 0.3s ease;
+}
+
+.puzzle-piece:hover {
+  transform: scale(1.05);
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.2));
+}
+
+.navigation {
+  margin-top: 30px;
+}
+
+.calendar-nav {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 4px;
+  margin: 10px 0 20px;
+}
+
+.month-table td, .day-table td {
+  border: none;
+  background-color: #f1f5f9;
+  border-radius: 6px;
+  padding: 10px 8px;
+  width: 16.66%;
+  text-align: center;
+  transition: all 0.2s ease;
+}
+
+.day-table td {
+  width: 14.28%;
+  padding: 8px 5px;
+}
+
+td:hover {
+  background-color: var(--border-color);
+  transform: translateY(-2px);
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 500;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+a:hover {
+  color: var(--accent-color);
+}
+
+.current-month, .current-day {
+  background-color: var(--primary-color) !important;
+}
+
+.current-month a, .current-day a {
+  color: white;
+}
+
+.footer {
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border-color);
+  font-size: 0.9rem;
+  color: #718096;
+}
+
+.footer a {
+  display: inline;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .center {
+    padding: 20px 15px;
+  }
+  
+  h1 {
+    font-size: 1.6rem;
+  }
+  
+  h2 {
+    font-size: 1.2rem;
+  }
+  
+  .month-table td, .day-table td {
+    padding: 6px 5px;
+    font-size: 0.9rem;
+  }
 }
